@@ -10,7 +10,7 @@ function CalcHistoryController($scope, $element, $attrs) {
   };
 }
 
-angular.module('core.calculator').component('calcHistory', {
+angular.module('calcApp').component('calcHistory', {
   templateUrl: 'components/calcHistory/calcHistory.html',
-  controller: CalcHistoryController
+  controller: [CalcHistoryController]
 });

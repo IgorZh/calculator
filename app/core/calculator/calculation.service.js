@@ -11,7 +11,7 @@ var baseOperations = {
 angular.module('core.calculator').factory('CalculationService',
   function () {
     return {
-      calc: function (operation, operand1, operand2) {
+      calculate: function (operation, operand1, operand2) {
         if (!baseOperations.hasOwnProperty(operation))
           return null;
 
