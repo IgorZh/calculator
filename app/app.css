@@ -1,25 +1,13 @@
-/* app css stylesheet */
+table { width: 500px; }
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+table, th, td {
+  border: 1px solid black;
 }
 
-.menu:before {
-  content: "[";
+th {
+  font-weight: bold;
 }
 
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
+td {
+  text-align: center;
 }

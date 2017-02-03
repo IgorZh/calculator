@@ -1,16 +1,27 @@
 'use strict';
 
 function CalculatorController(CalculationService) {
-  this.operations = CalculationService.operations;
+  var ctrl = this;
 
-  this.calculate = function () {
-    var res = CalculationService.calc(this.operation, this.operand1, this.operand2);
+  ctrl.calculation = {
+    operand1: 1,
+    operand2: 2,
+    operation: 'sum'
+  };
+  ctrl.operations = CalculationService.operations;
+  ctrl.calculate = function () {
+    var res = CalculationService.calc(ctrl.calculation.operation, ctrl.calculation.operand1, ctrl.calculation.operand2);
 
-    this.result = res === null ? 'Invalid calculation' : res;
+    ctrl.calculation.result = res === null ? 'Invalid calculation' : res;
+    ctrl.onCalculated({calculation: Object.assign({}, ctrl.calculation)});
   };
 }
 
-angular.module('core.calculator').component('calculator', {
+angular.module('calcApp').component('calculator', {
   templateUrl: 'components/calculator/calculator.html',
-  controller: ['CalculationService', CalculatorController]
+  controller: ['CalculationService', CalculatorController],
+  bindings: {
+    calculation: '<',
+    onCalculated: '&'
+  }
 });

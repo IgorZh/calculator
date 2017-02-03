@@ -1,0 +1,20 @@
+<calculator on-calculated="$ctrl.addCalculation(calculation)"></calculator>
+<h2>Calculations history</h2>
+<table>
+  <thead>
+    <tr>
+      <th>First Operand</th>
+      <th>Second Operand</th>
+      <th>Operation</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="calc in $ctrl.calculations">
+      <td>{{calc.operand1}}</td>
+      <td>{{calc.operand2}}</td>
+      <td>{{calc.operation}}</td>
+      <td>{{calc.result}}</td>
+    </tr>
+  </tbody>
+</table>
