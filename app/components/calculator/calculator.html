@@ -1,0 +1,12 @@
+<form ng-submit="$ctrl.calculate()">
+  <input type="number" ng-model="$ctrl.operand1" required/>
+  <input type="number" ng-model="$ctrl.operand2" required/>
+  <select ng-model="$ctrl.operation" required>
+    <option></option>
+    <option ng-repeat="operation in $ctrl.operations">{{operation}}</option>
+  </select>
+  <button type="submit">
+    Go!
+  </button>
+  <span>{{$ctrl.result}}</span>
+</form>
