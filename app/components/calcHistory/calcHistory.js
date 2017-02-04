@@ -1,6 +1,6 @@
 'use strict';
 
-function CalcHistoryController($scope, $element, $attrs) {
+function CalcHistoryController() {
   var ctrl = this;
 
   ctrl.calculations = [];
